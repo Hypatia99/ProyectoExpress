@@ -1,0 +1,25 @@
+{
+  "name": "proyectoexpress",
+  "version": "1.0.0",
+  "description": "Api usando Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hypatia99/ProyectoExpress.git"
+  },
+  "keywords": [
+    "API"
+  ],
+  "author": "Grecia Hypatiagizeh Duran Navarro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hypatia99/ProyectoExpress/issues"
+  },
+  "homepage": "https://github.com/Hypatia99/ProyectoExpress#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
