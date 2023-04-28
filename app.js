@@ -6,5 +6,11 @@ app.get ('/', function(req, res) {
 });
 
 app.listen(3000, function(){
-    console.log('Aplicacion de Ejemplo, escuchando el puerto 3000')
+    console.log('Una API desde express')
+});
+app.listen(3000, function(){
+    console.log('Hola desde la API')
+});
+app.listen(3000, function(){
+    console.log('Adios desde una API ')
 });
