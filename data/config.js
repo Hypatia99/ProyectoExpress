@@ -1,6 +1,6 @@
-const mysql=requiere('mysql');
+const mysql=require('mysql');
 
-const config ={
+const config = {
     host: 'localhost',
     user: 'root',
     password: 'root',
