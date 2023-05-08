@@ -19,8 +19,8 @@ app.get('/users',(request, response)=>{
 });
 
 //Mostrar un solo usuario por ID
-app.get('/users/:id',(recuest, reponse) => {
-    const id = recuest.params.id;
+app.get('/users/:id',(request, reponse) => {
+    const id = request.params.id;
 
     pool.query('SELECT * FROM users', (error, result)=>{
         if (error) throw error;
@@ -30,11 +30,22 @@ app.get('/users/:id',(recuest, reponse) => {
 });
 
 //Agregar un nuevo usuario
-app.post('/users',(recuest, reponse) => {
+app.post('/users',(request, reponse) => {
     pool.query('INSERT INTO users SET ?',request.body, (error, result)=>{
         if (error) throw error;
 
         response.status(201).send (`Use added whit ID: ${result.insertId}`);
+    });
+});
+
+//Actualizar usuario existente
+app.put('/users/id',(request, reponse) => {
+    const id= request.params.id;
+
+    pool.query('UPDATE users SET ? WHERE id = ? ',[request.body, id], (error, result)=>{
+        if (error) throw error;
+
+        response.send ('User updated successfully. ');
     });
 });
 
