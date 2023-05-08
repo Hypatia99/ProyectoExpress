@@ -39,13 +39,24 @@ app.post('/users',(request, reponse) => {
 });
 
 //Actualizar usuario existente
-app.put('/users/id',(request, reponse) => {
+app.put('/users/:id',(request, reponse) => {
     const id= request.params.id;
 
     pool.query('UPDATE users SET ? WHERE id = ? ',[request.body, id], (error, result)=>{
         if (error) throw error;
 
         response.send ('User updated successfully. ');
+    });
+});
+
+//Eliminar Usuario
+app.delete('/users/:id',(request, reponse) => {
+    const id= request.params.id;
+
+    pool.query('DELATE FROM users WHERE id = ?', id, (error, result)=>{
+        if (error) throw error;
+
+        response.send ('User deleted. ');
     });
 });
 
